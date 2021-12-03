@@ -5,11 +5,11 @@ const facturasTypes = gql`
         username : string!
     }
 
-    extends type Query {
+    extend type Query {
         VendedorByUsername(username : string!) : Vendedor!
     }
 
-    extends type Mutation {
+    extend type Mutation {
         createVendedor(vendedor : Vendedor!)  : Vendedor!
         updateVendedor(vendedor : Vendedor!)  : Vendedor!
         deleteVendedor(username : string!)  : String!
