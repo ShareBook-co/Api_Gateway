@@ -9,25 +9,36 @@ const userResolver = {
     },
     Mutation: {
         signUpUser: async (_, { userInput}, {dataSources}) => {
-            const accountInput = {
-
-            }
-
             const authInput = {
-                
+                username : userInput.username,
+                password : userInput.password,
+                name : userInput.name,
+                email : userInput.email,
+                address : userInput.address,
+                phone : userInput.phone,
+                gender : userInput.gender
+            }
+            return await dataSources.authAPI.createUser(authInput);
+        },
+        logIn: async (_, { credentials }, { dataSources }) => {
+            return await dataSources.authAPI.authRequest(credentials);
+        },
+        refreshToken: async (_, { refresh }, { dataSources }) => {
+            return await dataSources.authAPI.refreshToken(refresh);
+        },
+        updateUser: async (_, { userInput}, {dataSources, userIdToken}) => {
+            if ( userInput.id == userIdToken ) {
+                return await dataSources.authAPI.updateUser(userIdToken);
+            }else{
+                return null;
             }
         },
-        logIn: async (_, {}, {}) => {
-
-        },
-        refreshToken: async (_, {}, {}) => {
-
-        },
-        updateUser: async (_, {}, {}) => {
-
-        },
-        deleteUser: async (_, {}, {}) => {
-
+        deleteUser: async (_, { userId}, {dataSources, userIdToken}) => {
+            if ( userInput.id == userIdToken ) {
+                return await dataSources.authAPI.deleteUser(userId);
+            }else{
+                return null;
+            }
         }
     }
 }
