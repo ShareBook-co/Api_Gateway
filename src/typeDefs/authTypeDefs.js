@@ -43,11 +43,11 @@ const authTypes = gql `
         phone    : Int!
     }
 
-    extend type Query {
+    type Query {
         userDetailById(userId: Int!) : UserDetail! 
     }
 
-    extend Mutation {
+    type Mutation {
         signUpUser(userInput : SignUpInput!) : Tokens!
         logIn(credentials : Credentials!)    : Tokens!
         refreshToken (refresh : String!)     : Access!
