@@ -1,18 +1,22 @@
 const { gql } = require('apollo-server')
 
 const facturasTypes = gql`
-    type Vendedor {
-        username : string!
+    input Vendedor {
+        username : String!
+    }
+
+    type VendedorDetail {
+        username : String!
     }
 
     extend type Query {
-        VendedorByUsername(username : string!) : Vendedor!
+        vendedorByUsername(username : String!) : VendedorDetail!
     }
 
     extend type Mutation {
-        createVendedor(vendedor : Vendedor!)  : Vendedor!
-        updateVendedor(vendedor : Vendedor!)  : Vendedor!
-        deleteVendedor(username : string!)  : String!
+        createVendedor(vendedor : Vendedor!)  : VendedorDetail!
+        updateVendedor(vendedor : Vendedor!)  : VendedorDetail!
+        deleteVendedor(username : String!)  : String!
     }
 `;
 

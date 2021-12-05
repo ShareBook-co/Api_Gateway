@@ -30,17 +30,4 @@ class AuthAPI extends RESTDataSource {
         token = new Object( JSON.parse ( JSON.stringify(token) ) );
         return await this.post('/refresh/', token);
     }
-
-    async createBook(){
-
-    }
-    async bookById(){
-
-    }
-    async updateBook(){
-
-    }
-    async removeBook(){
-        
-    }
 }

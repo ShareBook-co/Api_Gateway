@@ -10,7 +10,7 @@ const userResolver = {
             }
             
         }, 
-        VendedorByUsername: async (_, {username}, {dataSources, userIdToken}) => {
+        vendedorByUsername: async (_, {username}, {dataSources, userIdToken}) => {
             usernameToken = (await dataSources.authAPI.getUser(userIdToken)).username;
             isVendedor = await dataSources.facturasAPI.vendedorByUsername(usernameToken);
             if(isVendedor != null) {

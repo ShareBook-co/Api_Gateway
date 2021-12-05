@@ -1,11 +1,10 @@
 const facturasResolver = {
     Query: {
-        facturasByCliente : async (_, {username}, {dataSources, userIdToken}) => {
-            
-            return await dataSources.facturasAPI.FacturasByCliente(username);
+        facturasByCliente : async (_, {username}, {dataSources}) => {
+            return await dataSources.facturasAPI.facturasByCliente(username);
         },
         facturasByVendedor: async (_, {username}, {dataSources}) => {
-            return await dataSources.facturasAPI.FacturasByVendedor(username);
+            return await dataSources.facturasAPI.facturasByVendedor(username);
         },
         
     },

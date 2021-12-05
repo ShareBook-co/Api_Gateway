@@ -30,11 +30,11 @@ const facturasTypes = gql`
 
     extend type Query {
         facturasByCliente(username : String!)  : Facturas!
-        facturasByVendedor(username : string!) : Facturas!
+        facturasByVendedor(username : String!) : Facturas!
     }
     extend type Mutation {
-        createFactura(factura : FacturasInput)  : Facturas!
-        updateFactura(factura : FacturasUpdate) : Facturas!
+        createFactura(factura : FacturasInput!)  : Facturas!
+        updateFactura(factura : FacturasUpdate!) : Facturas!
         deleteFactura(facturaId : String!)      : String!
     }
 `;

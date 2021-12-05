@@ -46,10 +46,10 @@ class facturasAPI extends RESTDataSource {
     async deleteFactura(facturaId){
         return await this.delete(`/facturacion/delete/${facturaId}`);
     }
-    async FacturasByCliente(username) {
+    async facturasByCliente(username) {
         return await this.get(`/facturacion/clientes/${username}`);
     }
-    async FacturasByVendedor(username){
+    async facturasByVendedor(username){
         return await this.get(`/facturacion/vendedor/${username}`);
     }
 
