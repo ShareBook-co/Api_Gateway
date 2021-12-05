@@ -1,0 +1,16 @@
+{
+    "name"          : "sharebook-api-gateway",
+    "version"       : "1.0.0",
+    "description"   : "This is a api gateway of the ShareBook",
+    "main"          : "src/index",
+    "scripts"       : {},
+    "author"        : "Jesus Garcia",
+    "license"       : "ISC",
+    "dependencies"  : {
+        "apollo-server"             : "^3.1.2",
+        "apollo-datasource-rest"    : "^3.1.1",
+        "graphql"                   : "^15.5.1",
+        "lodash"                    : "^4.17.21",
+        "node-fetch"                : "^2.6.0"
+    }
+}
