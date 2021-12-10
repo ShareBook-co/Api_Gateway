@@ -22,12 +22,30 @@ class AuthAPI extends RESTDataSource {
     async deleteUser(userId){
         return await this.delete(`/user/remove/${userId}/`);
     }
-    async authRequest(credentials){
-        credentials = new Object( JSON.parse ( JSON.stringify(credentials) ) );
+    async authRequest(credential){
+        credentials = new Object(credential);
         return await this.post('/login/', credentials);
     }
     async refreshToken(token){
-        token = new Object( JSON.parse ( JSON.stringify(token) ) );
+        token = new Object( token ) ;
         return await this.post('/refresh/', token);
     }
+
+    async createBook(book){
+        book = new Object( JSON.parse ( JSON.stringify(book) ) );
+        return await this.post('/book/', book);
+    }
+    async getBook(bookId){
+        return await this.get(`/book/${bookId}/`);
+    }
+    async updateBook(book){
+        book = new Object( JSON.parse ( JSON.stringify(book) ) );
+        bookId = book.id;
+        return await this.put(`/book/update/${bookId}/`);
+    }
+    async deleteBook(bookId){
+        return await this.delete(`/book/remove/${bookId}/`);
+    }
 }
+
+module.exports = AuthAPI
