@@ -54,3 +54,4 @@ class facturasAPI extends RESTDataSource {
     }
 
 }
+module.exports = facturasAPI
