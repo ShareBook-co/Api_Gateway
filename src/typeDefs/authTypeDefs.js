@@ -8,7 +8,7 @@ const authTypes = gql `
         email    : String!
         address  : String!
         phone    : Int!
-        gender   : String!
+        gender   : Boolean!
     }
 
     type Tokens {

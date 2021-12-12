@@ -4,7 +4,7 @@ const serverConfig = require('../server')
 class facturasAPI extends RESTDataSource {
     constructor(){
         super();
-        this.baseUrl = serverConfig.facturasAPIurl;
+        this.baseURL = serverConfig.facturasAPIurl;
     }
 
     async createCliente(cliente){
@@ -54,4 +54,4 @@ class facturasAPI extends RESTDataSource {
     }
 
 }
-module.exports = facturasAPI
+module.exports = facturasAPI;
