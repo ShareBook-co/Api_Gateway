@@ -13,7 +13,7 @@ const authTypes = gql `
 
     type Tokens {
         refresh : String!
-        acces   : String!
+        access   : String!
     }
 
     input Refresh{

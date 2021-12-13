@@ -8,11 +8,11 @@ class facturasAPI extends RESTDataSource {
     }
 
     async createCliente(cliente){
-        cliente = new Object( JSON.parse ( JSON.stringify(cliente) ));
+        cliente = new Object(cliente);
         return await this.post('/clientes', cliente);
     }
     async updateCliente(cliente){
-        cliente = new Object( JSON.parse ( JSON.stringify(cliente) ));
+        cliente = new Object(cliente);
         return await this.put('/clientes/update', cliente);
     }
     async deleteCliente(username){ 
@@ -22,11 +22,11 @@ class facturasAPI extends RESTDataSource {
         return await this.get(`/clientes/${username}`)
     }
     async createVendedor(vendedor) {
-        vendedor = new Object( JSON.parse ( JSON.stringify(vendedor) ));
+        vendedor = new Object(vendedor);
         return await this.post('/vendedores', vendedor);
     }
     async updateVendedor(vendedor) {
-        vendedor = new Object( JSON.parse ( JSON.stringify(vendedor) ));
+        vendedor = new Object(vendedor);
         return await this.put('/vendedores/update', vendedor);
     }
     async deleteVendedor(username) { 
@@ -36,11 +36,11 @@ class facturasAPI extends RESTDataSource {
         return await this.get(`/vendedores/${username}`);
     }
     async createFactura(factura){
-        factura = new Object( JSON.parse ( JSON.stringify(factura) ));
-        return await this.post('/facturacion',);
+        factura = new Object(factura);
+        return await this.post('/facturacion', factura);
     }
     async updateFactura(factura){
-        factura = new Object( JSON.parse ( JSON.stringify(factura) ));
+        factura = new Object(factura);
         return await this.put('/facturacion/update',factura);
     }
     async deleteFactura(facturaId){

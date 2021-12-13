@@ -15,7 +15,7 @@ const authentication = async( { req } ) => {
                 redirect    : "follow"    
             }
             let response = await fetch(
-                `${serverConfig.authBackendUrl}/verifyToken/`,
+                `${serverConfig.authBackendUrl}/veryfyToken`,
                 requestOptions
             )
     

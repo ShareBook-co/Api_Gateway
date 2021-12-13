@@ -19,6 +19,7 @@ const facturasTypes = gql`
         direccion       : String!
         idBook          : String!
         cantidadLibro   : Int!
+        valorTotal      : Int!
     }
 
     input FacturasUpdate {
